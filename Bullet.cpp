@@ -1,6 +1,10 @@
 #include "Bullet.hpp"
 
-Bullet::Bullet() {}
+
+Bullet::Bullet() {
+    setX(200);
+    setY(200);
+}
 
 Bullet::~Bullet() {}
 
@@ -19,6 +23,7 @@ void Bullet::setX(unsigned int sx) {
 }
 
 unsigned int Bullet::getX() const {
+
     return this->x;
 }
 

@@ -6,7 +6,7 @@ void settings() {
     unsigned int sx = 5;
     unsigned int sy = 5;
     Window window;
-    Bullet *arrBullet[40];
+    Bullet arrBullet[40];
     Player player = Player("}");
 
     Moves moves = Moves();
@@ -14,7 +14,7 @@ void settings() {
     srand(time(NULL));
     refresh();
     while (1) {
-        moves.enemyMoves(sy, sx, &arrBullet[40], player);
+        moves.enemyMoves(sy, sx, arrBullet, player);
     }
 }
 

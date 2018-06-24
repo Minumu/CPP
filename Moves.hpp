@@ -16,6 +16,6 @@ public:
 
     bool crashChecking(int, int, int, int, Player &);
     void playerMoves(unsigned int &sy, unsigned int &sx, Player, bool &);
-    void enemyMoves(unsigned int &sy, unsigned int &sx, Bullet*[40], Player &);
+    void enemyMoves(unsigned int &sy, unsigned int &sx, Bullet *, Player &);
 
 };

@@ -109,64 +109,43 @@ static void	navigation(Player &player)
     attroff(COLOR_PAIR(4));
 }
 
-void    Moves::enemyMoves(unsigned int &sy, unsigned int &sx, Bullet *arrBullet[40], Player &player)
+void    Moves::enemyMoves(unsigned int &sy, unsigned int &sx, Bullet * arrBullet, Player &player)
 {
     int range = gMapY - 1;
     bool space = false;
     Enemy enemy = Enemy();
-    int x = gMapX - 2;
+    unsigned int x = gMapX - 2;
     int randNumberEnemies = rand() % 5 + 3;
     int arr[] = {std::rand() % range +1, std::rand() % range +1, std::rand() % range +1, std::rand() % range +1, std::rand() % range +1};
     const char *arrS[] = {"*", "$", "#", "X", "W"};
     while (x > 0) {
         navigation(player);
         playerMoves(sy, sx, player, space);
-//        for (int idx = 0; idx < 40; ++idx) {
-//            if (arrBullet[idx] == NULL && space) {
-//                arrBullet[idx] = new Bullet;
-//                arrBullet[idx]->setY(sy);
-//                arrBullet[idx]->setX(sx + 1);
-//                space = false;
-//            } else if (arrBullet[idx] != NULL) {
-//                mvprintw(arrBullet[idx]->getY(), arrBullet[idx]->getX() - 1, " ");
-//                player.shipMoved(arrBullet[idx]->getY(), arrBullet[idx]->getX(), "-", 10);
-//                if (arrBullet[idx]->getX() + 1 < gMapX)
-//                    arrBullet[idx]->setX(arrBullet[idx]->getX() + 1);
-//                else {
-//                    mvprintw(arrBullet[idx]->getY(), arrBullet[idx]->getX(), " ");
-//                    arrBullet[idx] = NULL;
-//                }
-//            }
-//        }
-        for (int idx = 0; idx < 40; ++idx) {
-            if (arrBullet[idx] == NULL && space) {
-                std::cout << space << std::endl;
-                arrBullet[idx] = new Bullet;
-                arrBullet[idx]->setY(sy);
-                arrBullet[idx]->setX(sx + 1);
-                space = false;
-//                std::cout << arrBullet[idx]->getY() << std::endl;
-            } else if (arrBullet[idx] != NULL) {
-//                mvprintw(arrBullet[idx]->getY(), arrBullet[idx]->getX() - 1, " ");
-//                player.shipMoved(arrBullet[idx]->getY(), arrBullet[idx]->getX(), "-", 10);
-//                if (arrBullet[idx]->getX() + 1 < gMapX) {
-//                    for (int h = 0; h < randNumberEnemies; h++) {
-//                        if ((arrBullet[idx]->getX() == x || arrBullet[idx]->getX() == x - 1) && arrBullet[idx]->getY() == arr[h]) {
-//                            player.setScore(player.getScore() + 10);
-//                            mvprintw(arr[h], x, " ");
-//                            arr[h] = -1;
-//                            refresh();
-//                        }
-//                    }
-//                    arrBullet[idx]->setX(arrBullet[idx]->getX() + 1);
-//                }
-//                else {
-//                    mvprintw(arrBullet[idx]->getY(), arrBullet[idx]->getX(), " ");
-//                    arrBullet[idx] = NULL;
-//                }
-                std::cout << idx <<std::endl;
-            }
-        }
+         for (int idx = 0; idx < 40; ++idx) {
+             if (arrBullet[idx].getX() == 200 && space) {
+                 arrBullet[idx].setY(sy);
+                 arrBullet[idx].setX(sx + 1);
+                 space = false;
+             } else if (arrBullet[idx].getX() != 200) {
+                 mvprintw(arrBullet[idx].getY(), arrBullet[idx].getX() - 1, " ");
+                 player.shipMoved(arrBullet[idx].getY(), arrBullet[idx].getX(), "-", 10);
+                 if (arrBullet[idx].getX() + 1 < gMapX) {
+                     for (int h = 0; h < randNumberEnemies; h++) {
+                         if ((arrBullet[idx].getX() == x || arrBullet[idx].getX() == x - 1) && arrBullet[idx].getY() == (unsigned int)arr[h]) {
+                             player.setScore(player.getScore() + 10);
+                             mvprintw(arr[h], x, " ");
+                             arr[h] = -1;
+                             refresh();
+                         }
+                     }
+                     arrBullet[idx].setX(arrBullet[idx].getX() + 1);
+                 }
+                 else {
+                     mvprintw(arrBullet[idx].getY(), arrBullet[idx].getX(), " ");
+                     arrBullet[idx].setX(200);
+                 }
+             }
+         }
         for (int h = 0; h < randNumberEnemies; h++) {
             if (arr[h] == -1) {
 

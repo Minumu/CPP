@@ -3,6 +3,7 @@
 	Player::Player() : Ship() {
 		setScore(0);
 		setColor(10);
+        setLives(3);
 	}
 
 	Player::Player(const char* name) : Ship(1, 3, name) {
