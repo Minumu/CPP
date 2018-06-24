@@ -7,13 +7,14 @@ void settings() {
     unsigned int sy = 5;
     Window window;
     Bullet *arrBullet[40];
+    Player player = Player("}");
 
     Moves moves = Moves();
     nodelay(stdscr, true);
     srand(time(NULL));
     refresh();
     while (1) {
-        moves.enemyMoves(sy, sx, &arrBullet[5]);
+        moves.enemyMoves(sy, sx, &arrBullet[40], player);
     }
 }
 

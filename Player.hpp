@@ -15,9 +15,12 @@ public:
 	void setLives(unsigned int);
 	unsigned int getScore() const;
 	void setScore(unsigned int);
+	short getColor() const;
+	void setColor(short);
 
 
 private:
 	unsigned int _lives;
 	unsigned int _score;
+	short _color;
 };

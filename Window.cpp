@@ -4,7 +4,6 @@ Window::Window() {
     initNcurses();
     initColors();
     drawBorders();
-    //drawField();
 }
 
 Window::~Window() {
@@ -51,19 +50,6 @@ void Window::initColors()
     init_pair(4, 167, COLOR_BLACK);
     init_pair(5, 28, COLOR_BLACK);
     init_pair(6, 160, COLOR_BLACK);
-}
-
-void Window::drawField()
-{
-    for (unsigned int i = 0; i < gMapX; i++)
-    {
-        for (unsigned int j = 0; j < gMapY; j++)
-        {
-            attron(COLOR_PAIR(30));
-            mvprintw(i, j, "*");
-            attroff(COLOR_PAIR(30));
-        }
-    }
 }
 
 void Window::drawBorders()

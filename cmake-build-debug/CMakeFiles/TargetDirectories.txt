@@ -1,0 +1,3 @@
+/Users/tshevchu/Rush_MIMI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/tshevchu/Rush_MIMI/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/tshevchu/Rush_MIMI/cmake-build-debug/CMakeFiles/Rush_MIMI.dir

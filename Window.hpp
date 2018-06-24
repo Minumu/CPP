@@ -10,7 +10,6 @@ unsigned int const gMapY = 50;
 class Window {
 
 public:
-    int map[gMapX][gMapY];
     Window(void);
     ~Window(void);
 
@@ -18,7 +17,6 @@ public:
 
     Window(Window const & cpy);
     void initNcurses(void);
-    void drawField(void);
     void drawBorders(void);
     void initColors(void);
 };

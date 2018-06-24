@@ -14,8 +14,8 @@ public:
     ~Moves();
     Moves & operator=(Moves const & rhs);
 
-    void crashChecking(int, int, int, int);
-    void playerMoves(unsigned int &sy, unsigned int &sx, Player, Bullet*[], bool &);
-    void enemyMoves(unsigned int &sy, unsigned int &sx, Bullet*[]);
+    bool crashChecking(int, int, int, int, Player &);
+    void playerMoves(unsigned int &sy, unsigned int &sx, Player, bool &);
+    void enemyMoves(unsigned int &sy, unsigned int &sx, Bullet*[40], Player &);
 
 };

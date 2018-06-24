@@ -2,7 +2,7 @@
 
 	Ship::Ship() {
 		_size = 1;
-		_hp = 5;
+		_hp = 3;
 		_who = "}";
 	}
 
@@ -20,28 +20,21 @@
 		return (*this);
 	}
 
-	void Ship::shipMoved(int y, int x, const char *who) {
-//		if (who == "}") {
-//			mvprintw(y, x, ">");
-//			mvprintw(y, x, "=");
-//			mvprintw(y, x, "}");
-//		} else {
-		wattron(stdscr,COLOR_PAIR(30));
-			mvprintw(y, x, who);
-		wattroff(stdscr,COLOR_PAIR(30));
-//		}
-
+	void Ship::shipMoved(int y, int x, const char *who, short color) {
+		wattron(stdscr, COLOR_PAIR(color));
+		mvprintw(y, x, who);
+		wattroff(stdscr, COLOR_PAIR(color));
 		refresh();
 	}
 
-	int Ship::getHp() const {
-		return _hp;
-	}
+		int Ship::getHp() const {
+			return _hp;
+		}
 
-	void Ship::setHp(int hp) {
-		_hp = hp;
-	}
+		void Ship::setHp(int hp) {
+			_hp = hp;
+		}
 
-	int Ship::getSize() const {
-		return _size;
-	}
+		int Ship::getSize() const {
+			return _size;
+		}

@@ -11,7 +11,7 @@ public:
 	Ship( Ship const & src);
 
 	Ship & operator=(Ship const & rhs);
-	void shipMoved(int, int, const char*);
+	void shipMoved(int, int, const char*, short);
 
 	int getHp() const;
 	void setHp(int);
