@@ -10,5 +10,8 @@ public:
 	Enemy(Enemy const & src);
 
 	Enemy & operator=(Enemy const & rhs);
+	bool getStatus() const;
 
+private:
+	bool _isAlive;
 };

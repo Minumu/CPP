@@ -4,6 +4,11 @@
 		setScore(0);
 	}
 
+	Player::Player(const char* name) : Ship(1, 5, name) {
+
+	}
+
+
 	Player::~Player() { }
 
 	Player::Player( Player const & src) {

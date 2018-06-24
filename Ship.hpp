@@ -18,7 +18,7 @@ public:
 	int getSize() const;
 	
 private:
+    int _size;
 	int _hp;
-	int _size;
 	std::string _who;
 };

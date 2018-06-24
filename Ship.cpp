@@ -21,7 +21,16 @@
 	}
 
 	void Ship::shipMoved(int y, int x, const char *who) {
-		mvprintw(y, x, who);
+//		if (who == "}") {
+//			mvprintw(y, x, ">");
+//			mvprintw(y, x, "=");
+//			mvprintw(y, x, "}");
+//		} else {
+		wattron(stdscr,COLOR_PAIR(30));
+			mvprintw(y, x, who);
+		wattroff(stdscr,COLOR_PAIR(30));
+//		}
+
 		refresh();
 	}
 

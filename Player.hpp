@@ -6,6 +6,7 @@
 class Player : public Ship {
 public:
 	Player();
+	Player(const char*);
 	~Player();
 	Player( Player const & src);
 
@@ -14,6 +15,7 @@ public:
 	void setLives(unsigned int);
 	unsigned int getScore() const;
 	void setScore(unsigned int);
+
 
 private:
 	unsigned int _lives;

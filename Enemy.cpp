@@ -9,5 +9,10 @@
 	}
 
 	Enemy & Enemy::operator=(Enemy const & rhs) {
+		_isAlive = rhs.getStatus();
 		return *this;
+	}
+
+	bool Enemy::getStatus() const {
+		return _isAlive;
 	}
