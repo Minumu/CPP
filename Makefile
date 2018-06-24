@@ -1,9 +1,9 @@
 # Name of the program.
-NAME     := Voyager
+NAME     := ft_retro
 
 # Sources and objects.
-SRCS     := Ship.cpp Player.cpp Enemy.cpp Moves.cpp main.cpp
-HDRS     := Ship.hpp Player.hpp Enemy.hpp Moves.hpp Window.hpp
+SRCS     := Ship.cpp Player.cpp Enemy.cpp Moves.cpp Bullet.cpp Window.cpp main.cpp
+HDRS     := Ship.hpp Player.hpp Enemy.hpp Moves.hpp Bullet.hpp Window.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
@@ -15,7 +15,7 @@ all: $(NAME)
 
 # Compile the program with the objects.
 $(NAME): $(OBJS) $(HDRS)
-	@$(CXX) $(OBJS) -o $@
+	@$(CXX) -lncurses $(OBJS) -o $@
 
 # This won't run if the source files don't exist or are not modified.
 %.o: %.cpp %.hpp
